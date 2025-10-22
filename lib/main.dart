@@ -10,8 +10,13 @@ import 'package:practica05/config/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 Future<void> main() async {
+  // Asegurarnos de que las widgets bindings estén inicializados
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Cargar variables de entorno
   await dotenv.load(fileName: '.env');
 
+  // Iniciar la aplicación con el scope de providers
   runApp(const ProviderScope(child: MainApp()));
 }
 
