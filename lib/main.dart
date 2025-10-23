@@ -9,15 +9,13 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:practica05/config/theme/app_theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-Future<void> main() async {
-  // Asegurarnos de que las widgets bindings estén inicializados
-  WidgetsFlutterBinding.ensureInitialized();
+Future<void> main() async{
 
-  // Cargar variables de entorno
   await dotenv.load(fileName: '.env');
 
-  // Iniciar la aplicación con el scope de providers
-  runApp(const ProviderScope(child: MainApp()));
+  runApp(
+    const ProviderScope(child: MainApp() )
+  );
 }
 
 class MainApp extends StatelessWidget {
